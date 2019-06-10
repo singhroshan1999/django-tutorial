@@ -2,13 +2,29 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>Rick and Morty</title>
+<title>Model-Template-view + Database</title>
 <link rel="stylesheet" href= "{% static 'css/index.css' %}"/>
 <head>
 <body>
-<h1> Hi! this is rick and morty Bitch</h1>
-    {% comment %} {{ insert_me }} {% endcomment %}
-    <img src = "{% static 'images/download.jpg' %}" alt="blahblah">
+<h1> Hey! this is Model-Template-view paradgime + database</h1>
+{% if acc_rec %}
+<table>
+<tr>
+<th>site</th>
+<th>date</th>
+<tr>
+{% for i in acc_rec %}
+<tr>
+<td>{{ i.name }}</td>
+<td>{{ i.date }}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>ACCESS DENIED
+{% endif %}
+
+
 
 </body>
 </html>
