@@ -2,27 +2,16 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>Model-Template-view + Database</title>
+<title>Django Forms</title>
 <link rel="stylesheet" href= "{% static 'css/index.css' %}"/>
 <head>
 <body>
-<h1> Hey! this is Model-Template-view paradgime + database</h1>
-{% if acc_rec %}
-<table>
-<tr>
-<th>site</th>
-<th>date</th>
-<tr>
-{% for i in acc_rec %}
-<tr>
-<td>{{ i.name }}</td>
-<td>{{ i.date }}</td>
-</tr>
-{% endfor %}
-</table>
-{% else %}
-<p>ACCESS DENIED
-{% endif %}
+<h1> Hey! this is Django form demo</h1>
+<h2><a href = '/formpage'>click here to fill form</a></h2>
+<h2><a href = '/add_user'>click here to add user</a></h2>
+
+
+
 
 
 
