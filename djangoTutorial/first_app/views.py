@@ -31,4 +31,10 @@ def add_user(request):
             print('add_user ERROR')
             
     return render(request,'first_app/user_form.html',context={'form':form})
-            
+
+def relative_path(request):
+    return render(request,'first_app/relative_path.html')
+
+def template_filter(request):
+    context_dict = {'hw':"hello world!",'num':128}
+    return render(request,'first_app/template_filters.html',context_dict)

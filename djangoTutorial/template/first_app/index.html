@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-<title>Django Forms</title>
-<link rel="stylesheet" href= "{% static 'css/index.css' %}"/>
-<head>
-<body>
+ {% extends 'first_app/base.html' %}
+ {% block body_block %}
 <h1> Hey! this is Django form demo</h1>
 <h2><a href = '/formpage'>click here to fill form</a></h2>
 <h2><a href = '/add_user'>click here to add user</a></h2>
+<h2><a href = "{% url 'relative_path' %}">relative path 1</a></h2>
+<h2><a href = "{% url 'first_app:relative_path2' %}">relative path 2</a></h2>
+<h2><a href = "{% url 'admin:index' %}">admin page</a></h2>
+<h2><a href = "{% url 'index' %}">index page</a></h2>
+<h2><a href = "{% url 'template_filter' %}">template filter</a></h2>
+ {% endblock body_block %}
 
-
-
-
-
-
-</body>
-</html>

@@ -23,4 +23,6 @@ urlpatterns = [
     path('first_app/',include('first_app.urls')),
     path('formpage/',views.form_view,name = 'form'),
     path('add_user/',views.add_user,name = 'user_form'),
+    path('relative_path/',views.relative_path,name = 'relative_path'),
+    path('template_filter/',views.template_filter,name = 'template_filter'),
 ]
