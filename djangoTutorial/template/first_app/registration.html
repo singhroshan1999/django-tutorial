@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'first_app/base.html' %}
+<div class = "jumbotron">
+{% block body_block %}
+{% if registered %}
+<h1> you are registered </h1>
+{% else %}
+<h1> fill this form to register</h1>
+<form enctype="multipart/form-data" method = "post">
+{{ user_form.as_p}}
+{{ port_f.as_p}}
+{% csrf_token %}
+<input type = "submit">
+</form>
+{% endif %}
+</div>
+{% endblock body_block %}

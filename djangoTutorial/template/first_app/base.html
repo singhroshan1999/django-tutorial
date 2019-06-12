@@ -26,7 +26,10 @@
       <li class="active"><a href="{% url 'index' %}">Home</a></li>
       <li><a href="#">Page 1</a></li>
       <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'first_app:logout' %}">Logout</a></li>      
+      {% endif %}
+
     </ul>
   </div>
 </nav>

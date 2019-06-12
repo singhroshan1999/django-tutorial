@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User as User2
 
 # Create your models here.
 
@@ -31,3 +32,11 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
+class UserPortfolio(models.Model):
+    user = models.OneToOneField(User2,on_delete = models.PROTECT)
+    
+    portfolio = models.URLField(blank = True)
+    profile_pic = models.ImageField(upload_to = "profile_pics",blank = True)
+    
+    def __str__(self):
+        return self.user.username

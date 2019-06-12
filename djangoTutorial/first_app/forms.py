@@ -1,7 +1,7 @@
 from django import forms
 from django.core import validators
-from first_app.models import User
-
+from first_app.models import User,UserPortfolio
+from django.contrib.auth.models import User as User2
 
 
 def is_z(val):
@@ -31,6 +31,15 @@ class FormName(forms.Form):
 
 class NewUsers(forms.ModelForm):
     class Meta():
-        model = User
+        model = User2
         fields = '__all__'
         
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget = forms.PasswordInput())
+    class Meta():
+        model = User2
+        fields = ('username','email','password')
+class UserPortfolioForm(forms.ModelForm):
+    class Meta():
+        model = UserPortfolio
+        fields = ('portfolio','profile_pic')

@@ -9,5 +9,14 @@
 <h2><a href = "{% url 'admin:index' %}">admin page</a></h2>
 <h2><a href = "{% url 'index' %}">index page</a></h2>
 <h2><a href = "{% url 'template_filter' %}">template filter</a></h2>
+{% if  user.is_authenticated %}
+<h2><a href = "{% url 'first_app:logout' %}">AUTH: logout</a></h2>
+{% else %}
+<h2><a href = "{% url 'first_app:register' %}">AUTH: register</a></h2>
+<h2><a href = "{% url 'first_app:login' %}">AUTH: login</a></h2>
+{% endif %}
+<h2><a href = "{% url 'first_app:special' %}">AUTH: only loged in user can view</a></h2>
+
+
  {% endblock body_block %}
 
